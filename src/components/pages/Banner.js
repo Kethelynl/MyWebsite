@@ -3,42 +3,48 @@ import DownloadButton from "./DownloadButton";
 import { useState, useEffect, useCallback } from "react";
 import banner from "../../assets/img/banner2.png"
 
-export const Banner = ({texts, language, translations}) =>{
+export const Banner = ({texts, language, translations}) => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["front-end", "back-end"," web"];
     const [text, setText] = useState('');
+    const [index, setIndex] = useState(1);
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 200;
 
+    // Mover o array toRotate para dentro do useCallback
     const tick = useCallback(() => {
+        const toRotate = ["front-end", "back-end", "web"]; // Agora está dentro do useCallback
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-    
+
         setText(updatedText);
-    
+
         if (isDeleting) {
             setDelta(prevDelta => prevDelta / 2);
         }
-    
+
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
+            setIndex(prevIndex => prevIndex - 1);
             setDelta(period);
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
+            setIndex(1);
             setDelta(500);
-        } 
-    }, [loopNum, toRotate, isDeleting, text, period]);
-    
+        } else {
+            setIndex(prevIndex => prevIndex + 1);
+        }
+    }, [loopNum, isDeleting, text, period]);
+
     useEffect(() => {
         let ticker = setInterval(() => {
             tick();
         }, delta);
-    
+
         return () => clearInterval(ticker);
-    }, [tick, delta]); // Inclua 'tick' e 'delta' como dependências
+    }, [tick, delta]);
 
     return(
         <section className="banner" id="home">
