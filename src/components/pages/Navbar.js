@@ -78,12 +78,12 @@ export const NavBar = ({ texts, changeLanguage, language }) => {
                 <span className="navbar-text">
                     <div className="social-icon">
                         <a href="https://www.linkedin.com/in/kethelyn-cavalari/"><img src={icon1} alt="Ícone 1" /></a>
-                        <a href="https://github.com/Kethelynl"><img src={icon2}/></a>
-                        <a href="https://www.instagram.com/ket_cavalari/"><img src={icon3}/></a>
+                        <a href="https://github.com/Kethelynl"><img src={icon2} alt="Descrição da imagem"/></a>
+                        <a href="https://www.instagram.com/ket_cavalari/"><img src={icon3} alt="Descrição da imagem"/></a>
                     </div>
                     <div className="language-buttons">
-                        <button onClick={() => changeLanguage("en")} className={language === "pt" ? "active" : ""}><img src="/assets/img/usa.png" width={'40px'}/></button>
-                        <button onClick={() => changeLanguage("pt")} className={language === "en" ? "active" : ""}><img src="/assets/img/brasil.png" width={'45px'}/></button>
+                        <button onClick={() => changeLanguage("en")} className={language === "pt" ? "active" : ""}><img src="/assets/img/usa.png" width={'40px'} alt="Descrição da imagem"/></button>
+                        <button onClick={() => changeLanguage("pt")} className={language === "en" ? "active" : ""}><img src="/assets/img/brasil.png" width={'45px'} alt="Descrição da imagem"/></button>
                     </div>
                     <a className="vvd" href="https://wa.me/5511984870198?text=Olá%2C%20gostei%20do%20seu%20perfil%20podemos%20conversar?"><span>{texts.btn}</span></a>
                 </span>
