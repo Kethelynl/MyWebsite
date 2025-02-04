@@ -8,17 +8,16 @@ export const Banner = ({texts, language, translations}) =>{
     const [isDeleting, setIsDeleting] = useState(false);
     const toRotate = ["front-end", "back-end"," web"];
     const [text, setText] = useState('');
-    const [index, setIndex] = useState(1);
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 200;
 
     useEffect(() =>{
         let ticker = setInterval(() =>{
             tick();
-        },delta)
-
-        return () => {clearInterval(ticker)};
-    }, [text])
+        }, delta);
+    
+        return () => { clearInterval(ticker); };
+    }, [text, delta]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -33,15 +32,11 @@ export const Banner = ({texts, language, translations}) =>{
     
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
-            setIndex(prevIndex => prevIndex - 1);
             setDelta(period);
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setIndex(1);
             setDelta(500);
-        } else {
-            setIndex(prevIndex => prevIndex + 1);
         }
     }
 
