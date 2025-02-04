@@ -1125,8 +1125,9 @@ form{
 
   .cct-form form input, .cct-form form textarea{
     font-size: 14px;
-    padding: 5px;
   }
+
+  
 
   .cct-form h3{
     color: #ffffff;
@@ -1172,6 +1173,10 @@ form{
   .project-buttons{
     gap: 10px;
     flex-direction: column;
+  }
+
+  .block1 input, .block2 input{
+    width: 150px;
   }
   
 }
