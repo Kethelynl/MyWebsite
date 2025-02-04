@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import DownloadButton from "./DownloadButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import banner from "../../assets/img/banner2.png"
 
 export const Banner = ({texts, language, translations}) =>{
@@ -11,15 +11,7 @@ export const Banner = ({texts, language, translations}) =>{
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 200;
 
-    useEffect(() =>{
-        let ticker = setInterval(() =>{
-            tick();
-        }, delta);
-    
-        return () => { clearInterval(ticker); };
-    }, [text, delta]);
-
-    const tick = () => {
+    const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
@@ -37,8 +29,16 @@ export const Banner = ({texts, language, translations}) =>{
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
             setDelta(500);
-        }
-    }
+        } 
+    }, [loopNum, toRotate, isDeleting, text, period]);
+    
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+    
+        return () => clearInterval(ticker);
+    }, [tick, delta]); // Inclua 'tick' e 'delta' como dependências
 
     return(
         <section className="banner" id="home">
