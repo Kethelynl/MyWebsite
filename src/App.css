@@ -84,7 +84,6 @@ nav.navbar {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  
 
   &.open{
     display: flex;
@@ -92,7 +91,7 @@ nav.navbar {
     width: 100%;
     height: auto;
     position: fixed;
-    margin-top: 600px;
+    margin-top: 590px;
     background-color: rgb(56, 21, 65, 0.7);
   
     .me-auto{
@@ -1125,7 +1124,8 @@ form{
   }
 
   .cct-form form input, .cct-form form textarea{
-    font-size: 10px;
+    font-size: 14px;
+    padding: 5px;
   }
 
   .cct-form h3{
@@ -1167,7 +1167,7 @@ form{
   }
 
   .cct-form form input, .cct-form form textarea{
-    font-size: 50%;
+    font-size: 14px;
   }
   .project-buttons{
     gap: 10px;
