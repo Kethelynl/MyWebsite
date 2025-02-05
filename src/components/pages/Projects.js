@@ -44,6 +44,16 @@ export const Projects = ({texts}) =>{
         },
     ];
 
+    const frontend = [
+        {
+            title: "Banner",
+            description: "landing page animada para banners de sites interativos",
+            imgUrl: "/assets/img/project_front.png",
+            git:"https://github.com/Kethelynl/Banner",
+            site:"https://lagepage-kethelyn.netlify.app/",
+        }
+    ]
+
     return(
         <section className="project" id="project">
             <Container>
@@ -80,7 +90,18 @@ export const Projects = ({texts}) =>{
                                 }
                             </Row>
                         </Tab.Pane>
-                        <Tab.Pane eventKey="second">Em Breve, mas, meu portifólio reflete minhas habilidades.</Tab.Pane>
+                        <Tab.Pane eventKey="second">
+                        {
+                                    frontend.map((frontends, index) =>{
+                                        return(
+                                            <ProjectCard
+                                            key={index}
+                                            {...frontends}
+                                            />
+                                        )
+                                    })
+                                }
+                        </Tab.Pane>
                         <Tab.Pane eventKey="third">
                         <Row>
                                 {
@@ -89,6 +110,16 @@ export const Projects = ({texts}) =>{
                                             <ProjectCard
                                             key={index}
                                             {...project}
+                                            />
+                                        )
+                                    })
+                                }
+                                {
+                                    frontend.map((frontends, index) =>{
+                                        return(
+                                            <ProjectCard
+                                            key={index}
+                                            {...frontends}
                                             />
                                         )
                                     })
