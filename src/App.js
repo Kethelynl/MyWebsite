@@ -87,6 +87,8 @@ const translations = {
       subscrib4: `Sistema de biblioteca com funcinalidade de listar livros, cadastrar livros, atualizar livros e deletar livros`,
       subscrib5: `Sistema de lava rápido com cadastro de carros, cor, placa, modelo, tipo de serviço, 
       listagem de carros e validação de placa única`,
+      subscrib6: `Sistema para doação de produtos, alinhado com a ODS da Cruzeiro do sul, esse sistema foi feito para facilitar 
+      a transação de produtos entre os doadores e aqueles que irão receber`,
   },
     Contact:{
       title:"Envie uma Mensagem",
@@ -175,6 +177,8 @@ const translations = {
         subscrib4: `Library system with functionality to list books, register books, update books and delete books`,
         subscrib5: `Car wash system with car registration, color, license plate, model, type of service, 
         car listing and single license plate validation.`,
+        subscrib6: `System for Product Donation, aligned with the Sustainable Development Goals of Cruzeiro do Sul.
+        This system was created to facilitate the exchange of products between donors and recipients.`,
     },
     Contact:{
       title:"Send a Message",
