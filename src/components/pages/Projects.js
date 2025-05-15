@@ -43,15 +43,6 @@ export const Projects = ({texts}) =>{
             git:"https://github.com/Kethelynl/DoaF-cil",
             site:"https://doafacil.pythonanywhere.com/",
         },
-            const frontend = [
-        {
-            title: "Banner",
-            description: "landing page animada para banners de sites interativos",
-            imgUrl: "/assets/img/project_front.png",
-            git:"https://github.com/Kethelynl/Banner",
-            site:"https://lagepage-kethelyn.netlify.app/",
-        }
-    ]
     ];
 
     const frontend = [
