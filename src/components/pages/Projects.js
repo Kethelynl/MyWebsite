@@ -37,11 +37,21 @@ export const Projects = ({texts}) =>{
 
         },
         {
-            title:"Lava Rápido",
-            description: texts.subscrib5,
-            imgUrl: "/assets/img/lavarapido.jpg",
-            git:"https://github.com/Kethelynl/Sistema-de-Cadastro-e-Listagem-de-Carros-com-Django-e-GraphQL",
+            title:"Doa Fácil",
+            description: texts.subscrib6,
+            imgUrl: "/assets/img/doafacil.png",
+            git:"https://github.com/Kethelynl/DoaF-cil",
+            site:"https://doafacil.pythonanywhere.com/",
         },
+            const frontend = [
+        {
+            title: "Banner",
+            description: "landing page animada para banners de sites interativos",
+            imgUrl: "/assets/img/project_front.png",
+            git:"https://github.com/Kethelynl/Banner",
+            site:"https://lagepage-kethelyn.netlify.app/",
+        }
+    ]
     ];
 
     const frontend = [
