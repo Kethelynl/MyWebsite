@@ -12,6 +12,7 @@ export const Projects = ({texts}) =>{
             description: texts.subscrib1 ,
             imgUrl: "/assets/img/vacinacao.jpg",
             git:"https://github.com/Kethelynl/VacinaF-cil",
+            site:"https://comercial.pythonanywhere.com/",
 
         },
         {
@@ -35,6 +36,12 @@ export const Projects = ({texts}) =>{
             imgUrl: "/assets/img/biblioteca.jpg",
             git:"https://github.com/Kethelynl/API_Biblioteca",
 
+        },
+         {
+            title:"Lava Rápido",
+            description: texts.subscrib5,
+            imgUrl: "/assets/img/lavarapido.jpg",
+            git:"https://github.com/Kethelynl/Sistema-de-Cadastro-e-Listagem-de-Carros-com-Django-e-GraphQL",
         },
         {
             title:"Doa Fácil",
